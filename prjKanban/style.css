@@ -1,0 +1,172 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    outline: none;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: whitesmoke;
+}
+.header{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: cadetblue;
+    padding: 30px;
+}
+
+button.primary {
+    border: none;
+    background-color: cyan;
+    color: black;
+    font-size: 15px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.container {
+    display: flex;
+    gap: 100px;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+}
+
+    .container .column {
+        width: 300px;
+        height: 500px;
+        background-color: gray;
+        border-radius: 20px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+}
+
+        .container .column .head {
+            background-color: cadetblue;
+            font-size: xx-large;
+            color: black;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .container .column .body {
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+            .container .column .body .cards_list{
+                display: flex;
+                flex-direction: column;
+            }
+
+            .container .column .body .add_btn{
+                background: none;
+                background-color: white;
+                border: 1px solid;
+                border-radius: 10px;
+                padding: 5px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                cursor: pointer;
+            }
+
+            .container .column .body .card {
+                background-color: white;
+                border-radius: 7px;
+                padding: 10px;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                margin-bottom: 20px;
+            }
+
+            .container .column .body .card .info {
+                font-size: 15px;
+                color: #000;
+                display: flex;
+                flex-direction: column;
+            }
+
+#modal {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+    #modal .box{
+    background-color: cadetblue;
+    width: 400px;
+    border-radius: 8px;
+    overflow: hidden;
+    }
+
+        #modal .box .head {
+        display: flex;
+        justify-content: space-between;
+        padding: 15px 20px;
+        border-bottom: 1px solid #000;
+        }
+
+            #modal .box .head span{
+                font-size: 22px;
+                font-weight: 700;
+                color: #000;
+            }
+
+            #modal .box .head button{
+                border: none;
+                background: none;
+                font-size: 30px;
+                font-weight: bold;
+                cursor: pointer;
+                color: black;
+            }
+
+            #modal .box .form {
+                padding: 20px;
+            }
+
+                .modal .box .form .form-group{
+                    margin-bottom: 15px;
+                }
+
+                #modal .box .form label {
+                    display: block;
+                    font-size: 18px;
+                    color: black;
+                }
+
+                #modal .box .form textarea{
+                    width: 100%;
+                    border-radius: 10px;
+                    padding: 18px 15px;
+                    font-size: 15px;
+                }
+
+                #modal .box .form select {
+                    font-size: 15px;
+                    padding: 10px;
+                    font-size: 15px;
+                    border-radius: 8px;
+                }
+
+                #modal .box .form button {
+                    display: block;
+                    margin-left: 35%;
+                }
+
+                
+

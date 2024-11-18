@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quadro Kanban</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Criação de Conteúdo</h1>
+        <button class="primary" onclick="abrirModal()">Nova tarefa</button>
+    </div>
+    <div class="container">
+
+        <div class="column" data-column="1" ondrop="dropHandler(event)" ondragover="dragoverHandler(event)">
+            <div class="head">
+                <span>Ideias</span>
+            </div>
+            <div class="body">
+                <div class="cards_list"></div>
+                <button class="add_btn" onclick="abrirModal(1)">
+                        <span class="material-icons"> add_circle_outline</span>
+                        Adicionar item
+                </button>
+            </div>
+        </div>
+
+        <div class="column" data-column="2" ondrop="dropHandler(event)" ondragover="dragoverHandler(event)">
+            <div class="head">
+                <span>Produção</span>
+            </div>
+            <div class="body">
+                <div class="cards_list"></div>
+                <button class="add_btn" onclick="abrirModal(2)">
+                        <span class="material-icons"> add_circle_outline</span>
+                        Adicionar item
+                </button>
+            </div>
+        </div>
+
+        <div class="column" data-column="3" ondrop="dropHandler(event)" ondragover="dragoverHandler(event)">
+            <div class="head">
+                <span>Publicado</span>
+            </div>
+            <div class="body">
+                <div class="cards_list"></div>
+                <button class="add_btn" onclick="abrirModal(3)">
+                        <span class="material-icons"> add_circle_outline</span>
+                        Adicionar item
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="modal" id="modal">
+        <div class="box">
+            <div class="head">
+                <span id="tituloCriar">Nova tarefa</span>
+                <span id="tituloEditar">Editar tarefa</span>
+                 <button class="material-icons" onclick="fecharModal()">
+                    cancel
+                 </button> 
+            </div>
+
+            <div class="form">
+                <input type="hidden" id="idInput">
+                <div class="form-group">
+                    <label for="descricao">Descrição</label>
+                    <textarea id="descricao" rows="3"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="prioridade">Prioridade</label>
+                    <select id="prioridade">
+                        <option>Baixa</option>
+                        <option>Média</option>
+                        <option>Alta</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="column">Coluna</label>
+                    <select id="column">
+                        <option value="1">Ideias</option>
+                        <option value="2">Produção</option>
+                        <option value="3">Publicado</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="tempo">Prazo</label>
+                    <input type="date" id="tempo">
+                </div>
+
+                <button class="primary" onclick="criarTarefa()" id="btnCriar">Cadastrar</button>
+                <button class="primary" onclick="AtualizarTarefa()" id="btnEditar">Salvar alterações</button>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
